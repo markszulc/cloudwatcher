@@ -4,7 +4,6 @@ version = 1.
 
 import requests
 import socket
-import msal
 import atexit
 import os
 import os.path
