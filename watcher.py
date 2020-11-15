@@ -17,6 +17,8 @@ import threading
 
 print("Booting v" + str(version))
 
+width = 0
+height = 0
 blinkThread = None
 after_work = False
 globalRed = 0
@@ -160,3 +162,4 @@ cpu_r = round(cpu.temperature, 2)
 print("Current CPU:\t\t" + str(cpu_r) + "°C")
 
 print(jsonresult['status'])
+switchBlue()
