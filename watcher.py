@@ -12,7 +12,7 @@ from random import randint
 import configparser
 from urllib.error import HTTPError
 import json
-import unicornhat as unicorn
+import unicornhat as uh
 import threading
 import sys
 import urllib.parse
@@ -117,9 +117,11 @@ elif jsonresult['status'] == "running":
 			
 
 			
-unicorn.set_layout(unicorn.PHAT)
-unicorn.brightness(0.5)
-unicorn.set_pixel(0,0,255,0,0)
-unicorn.show()
+uh.set_layout(uh.PHAT)
+uh.brightness(0.5)
+uh.set_pixel(0, 0, 255, 0, 0)
+uh.show()
+
+time.sleep(1)
 			
 print("Complete")
