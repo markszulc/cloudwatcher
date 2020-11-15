@@ -48,20 +48,20 @@ jsonresult = ''
 trycount = 0
 
 try:
-	result = requests.get(f'https://tools.learningcontainer.com/sample-json.json', headers=headers, timeout=5)
+	result = requests.get(f'https://runtime.adobe.io/api/v1/web/20092_29243/PreciousOrangeHorse-0.0.1/generic', headers=headers, timeout=5)
 	result.raise_for_status()
 	jsonresult = result.json()
 
 except requests.exceptions.Timeout as timeerr:
-	printerror("The request for Graph API timed out! " + str(timeerr))
+	printerror("The request for Cloud Buddy API timed out! " + str(timeerr))
 
 except requests.exceptions.HTTPError as err:
 	if err.response.status_code == 404:
-		printerror("MS Graph URL is invalid!")
+		printerror("Cloud Buddy URL is invalid!")
 		exit(5)
 	elif err.response.status_code == 401:
 		trycount = trycount + 1
-		printerror("MS Graph is not authorized. Please reauthorize the app (401). Trial count: " + str(trycount))
+		printerror("Cloud Watcher is not authorized. Please reauthorize the app (401). Trial count: " + str(trycount))
 		print()
 
 except:
@@ -84,4 +84,4 @@ print("Last API call:\t\t" + now.strftime("%Y-%m-%d %H:%M:%S"))
 cpu_r = round(cpu.temperature, 2)
 print("Current CPU:\t\t" + str(cpu_r) + "°C")
 
-print(jsonresult['firstName'])
+print(jsonresult['status'])
