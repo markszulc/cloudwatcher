@@ -168,7 +168,7 @@ except:
 cpu = CPUTemperature()
 
 # Print to display
-os.system('clear')
+#os.system('clear')
 print("============================================")
 print("            Cloud Watcher")
 print("============================================")
