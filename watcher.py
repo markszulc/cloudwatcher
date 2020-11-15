@@ -2,17 +2,26 @@
 # Last edit: 15/11/20
 version = 1.
 
-import os
-import unicornhat as unicorn
-import time
-import colorsys
-import json
-import socket
 import requests
-from gpiozero import CPUTemperature
+import socket
+import msal
+import atexit
+import os
+import os.path
+import argparse
+from random import randint
+import configparser
+from urllib.error import HTTPError
+import json
+import unicornhat as unicorn
+import threading
+import sys
+import urllib.parse
 from time import sleep
 from datetime import datetime, time
-import threading	
+from signal import signal, SIGINT
+from gpiozero import CPUTemperature
+import pyqrcode
 
 
 print("Booting v" + str(version))
