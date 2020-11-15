@@ -73,12 +73,15 @@ def countdown(t):
 def switchBlue() :
 	for x in range(2):
 		offset = x * spacing
-		for y in range(4)
+		for y in range(4):
 			uh.set_pixel(x, y, 50, 116, 222)
 	uh.show()
 
 def switchGreen() :
-	uh.set_pixel(0, 0, 0, 255, 0)
+	for x in range(2):
+		offset = x * spacing
+		for y in range(4):
+			uh.set_pixel(x, y, 0, 255, 0)
 	uh.show()
 
 	
