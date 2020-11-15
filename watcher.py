@@ -33,18 +33,6 @@ def is_connected():
         pass
     return False
 
-def printHeader():
-	# Get CPU temp
-	cpu = CPUTemperature()
-
-	os.system('clear')
-	print("============================================")
-	print("            MSFT Teams Presence")
-	print("============================================")
-	print()
-	cpu_r = round(cpu.temperature, 2)
-	print("Current CPU:\t\t" + str(cpu_r) + "°C")
-
 
 #### MAIN ######
 
@@ -60,7 +48,7 @@ jsonresult = ''
 trycount = 0
 
 try:
-	result = requests.get(f'https://www.markszulc.com', headers=headers, timeout=5)
+	result = requests.get(f'https://tools.learningcontainer.com/sample-json.json', headers=headers, timeout=5)
 	result.raise_for_status()
 	jsonresult = result.json()
 
