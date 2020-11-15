@@ -70,18 +70,20 @@ def countdown(t):
 	print("                                      ", end="\r")
 
 
-def switchBlue() :
+def switchBlue(prg) :
+	rowoffset = prg * 2
 	for x in range(2):
-		offset = x * spacing
+		offset = x + rowoffset
 		for y in range(4):
-			uh.set_pixel(x, y, 50, 116, 222)
+			uh.set_pixel(offset, y, 50, 116, 222)
 	uh.show()
 
-def switchGreen() :
+def switchGreen(prg) :
+	rowoffset = prg * 2
 	for x in range(2):
-		offset = x * spacing
+		offset = x + rowoffset
 		for y in range(4):
-			uh.set_pixel(x, y, 0, 255, 0)
+			uh.set_pixel(offset, y, 0, 255, 0)
 	uh.show()
 
 	
@@ -147,10 +149,14 @@ while True:
 
 	if jsonresult['status'] == "hibernated":
 				print("Venia Dev:\t\t" + '\033[32m' + "Hibernated" + '\033[0m')
-				switchBlue()
+				switchBlue(1)
+				switchBlue(2)
+				switchBlue(3)
 
 	elif jsonresult['status'] == "running":
 				print("Venia Dev:\t\t" + '\033[31m' + "Running" + '\033[0m')
-				switchGreen()
+				switchGreen(1)
+				switchGreen(2)
+				switchGreen(3)
 
 	countdown(int(sleepValue))
