@@ -71,7 +71,7 @@ def countdown(t):
 
 
 def switchBlue(prg) :
-	rowoffset = prg * 2
+	rowoffset = prg * 3
 	for x in range(2):
 		offset = x + rowoffset
 		for y in range(4):
@@ -79,7 +79,7 @@ def switchBlue(prg) :
 	uh.show()
 
 def switchGreen(prg) :
-	rowoffset = prg * 2
+	rowoffset = prg * 3
 	for x in range(2):
 		offset = x + rowoffset
 		for y in range(4):
