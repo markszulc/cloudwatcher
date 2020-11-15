@@ -139,7 +139,9 @@ elif jsonresult['status'] == "running":
 
 			
 
-uh.set_pixel(0, 0, 0, 255, 0)
+uh.set_pixel(0, 0, 50, 116, 222)
+uh.set_pixel(1, 1, 50, 116, 222)
+uh.set_pixel(2, 2, 50, 116, 222)
 uh.show()
 
 
