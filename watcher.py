@@ -56,6 +56,21 @@ def is_connected():
         pass
     return False
 
+# Countdown for minutes
+def countdown(t):
+	total = t
+	progvalue = 0
+	while t:
+		mins, secs = divmod(t, 60)
+		timer = '{:02d}:{:02d}'.format(mins, secs)
+		print("Time until next run: " + timer, end="\r")
+		sleep(1)
+		t -= 1
+	print("                                      ", end="\r")
+
+
+	
+
 
 #### MAIN ######
 
@@ -105,7 +120,7 @@ except:
 cpu = CPUTemperature()
 
 # Print to display
-#os.system('clear')
+os.system('clear')
 print("============================================")
 print("            Cloud Watcher")
 print("============================================")
@@ -127,5 +142,7 @@ elif jsonresult['status'] == "running":
 uh.set_pixel(0, 0, 0, 255, 0)
 uh.show()
 
+
+countdown(int(sleepValue))
 			
 print("Complete")
