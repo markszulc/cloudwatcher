@@ -37,6 +37,7 @@ points = []
 fullname = ''
 brightness_led = 0.5
 sleepValue = 30 # seconds
+spacing = 360.0 / 16.0
 
 
 
@@ -70,7 +71,10 @@ def countdown(t):
 
 
 def switchBlue() :
-	uh.set_pixel(0, 0, 50, 116, 222)
+	for x in range(2):
+		offset = x * spacing
+		for y in range(4)
+			uh.set_pixel(x, y, 50, 116, 222)
 	uh.show()
 
 def switchGreen() :
