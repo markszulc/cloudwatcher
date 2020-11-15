@@ -2,12 +2,17 @@
 # Last edit: 15/11/20
 version = 1.
 
+import os
 import unicornhat as uh
 import time
 import colorsys
 import json
 import socket
 import requests
+from gpiozero import CPUTemperature
+from time import sleep
+from datetime import datetime, time
+	
 
 
 print("Booting v" + str(version))
@@ -27,6 +32,18 @@ def is_connected():
     except OSError:
         pass
     return False
+
+def printHeader():
+	# Get CPU temp
+	cpu = CPUTemperature()
+
+	os.system('clear')
+	print("============================================")
+	print("            MSFT Teams Presence")
+	print("============================================")
+	print()
+	cpu_r = round(cpu.temperature, 2)
+	print("Current CPU:\t\t" + str(cpu_r) + "°C")
 
 
 #### MAIN ######
@@ -63,4 +80,20 @@ except:
 	print("Unexpected error:", sys.exc_info()[0])
 	print("Will try again. Trial count: " + str(trycount))
 	print()
+	
+	
+# Get CPU temp
+cpu = CPUTemperature()
+
+# Print to display
+os.system('clear')
+print("============================================")
+print("            Cloud Watcher")
+print("============================================")
+print()
+now = datetime.now()
+print("Last API call:\t\t" + now.strftime("%Y-%m-%d %H:%M:%S"))
+cpu_r = round(cpu.temperature, 2)
+print("Current CPU:\t\t" + str(cpu_r) + "°C")
+
 	
