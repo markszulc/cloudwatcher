@@ -241,7 +241,7 @@ print("Current CPU:\t\t" + str(cpu_r) + "°C")
 if jsonresult['status'] == "hibernated":
 			print("Venia Dev:\t\t" + '\033[32m' + "Hibernated" + '\033[0m')
 			switchBlue()
-		elif jsonresult['status'] == "running":
+elif jsonresult['status'] == "running":
 			print("Venia Dev:\t\t" + '\033[31m' + "Running" + '\033[0m')
 			switchBlue()
 			
