@@ -147,16 +147,15 @@ while True:
 	cpu_r = round(cpu.temperature, 2)
 	print("Current CPU:\t\t" + str(cpu_r) + "°C")
 
+	switchBlue(1)
+	switchBlue(2)
+			
 	if jsonresult['status'] == "hibernated":
 				print("Venia Dev:\t\t" + '\033[32m' + "Hibernated" + '\033[0m')
-				switchBlue(0)
-				switchBlue(1)
 				switchBlue(2)
 
 	elif jsonresult['status'] == "running":
 				print("Venia Dev:\t\t" + '\033[31m' + "Running" + '\033[0m')
-				switchGreen(0)
-				switchGreen(1)
 				switchGreen(2)
 
 	countdown(int(sleepValue))
