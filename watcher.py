@@ -81,75 +81,69 @@ def switchGreen() :
 
 
 #### MAIN ######
-
-# Check internet
-if is_connected == False:
-	printerror("No network. Please connect to the internet and restart the app.")
-	exit(3)
-
-
-uh.set_layout(uh.PHAT)
-uh.brightness(0.5)
-uh.set_pixel(0, 0, 255, 0, 0)
-uh.show()
+while True:
+	# Check internet
+	if is_connected == False:
+		printerror("No network. Please connect to the internet and restart the app.")
+		exit(3)
 
 
-	
-print("Fetching new data")
-headers={}
+	uh.set_layout(uh.PHAT)
+	uh.brightness(0.5)
+	uh.set_pixel(0, 0, 255, 0, 0)
+	uh.show()
 
-jsonresult = ''
-trycount = 0
 
-try:
-	result = requests.get(f'https://runtime.adobe.io/api/v1/web/20092_29243/PreciousOrangeHorse-0.0.1/generic', headers=headers, timeout=5)
-	result.raise_for_status()
-	jsonresult = result.json()
 
-except requests.exceptions.Timeout as timeerr:
-	printerror("The request for Cloud Buddy API timed out! " + str(timeerr))
+	print("Fetching new data")
+	headers={}
 
-except requests.exceptions.HTTPError as err:
-	if err.response.status_code == 404:
-		printerror("Cloud Buddy URL is invalid!")
-		exit(5)
-	elif err.response.status_code == 401:
-		trycount = trycount + 1
-		printerror("Cloud Watcher is not authorized. Please reauthorize the app (401). Trial count: " + str(trycount))
+	jsonresult = ''
+	trycount = 0
+
+	try:
+		result = requests.get(f'https://runtime.adobe.io/api/v1/web/20092_29243/PreciousOrangeHorse-0.0.1/generic', headers=headers, timeout=5)
+		result.raise_for_status()
+		jsonresult = result.json()
+
+	except requests.exceptions.Timeout as timeerr:
+		printerror("The request for Cloud Buddy API timed out! " + str(timeerr))
+
+	except requests.exceptions.HTTPError as err:
+		if err.response.status_code == 404:
+			printerror("Cloud Buddy URL is invalid!")
+			exit(5)
+		elif err.response.status_code == 401:
+			trycount = trycount + 1
+			printerror("Cloud Watcher is not authorized. Please reauthorize the app (401). Trial count: " + str(trycount))
+			print()
+
+	except:
+		print("Unexpected error:", sys.exc_info()[0])
+		print("Will try again. Trial count: " + str(trycount))
 		print()
 
-except:
-	print("Unexpected error:", sys.exc_info()[0])
-	print("Will try again. Trial count: " + str(trycount))
+
+	# Get CPU temp
+	cpu = CPUTemperature()
+
+	# Print to display
+	os.system('clear')
+	print("============================================")
+	print("            Cloud Watcher")
+	print("============================================")
 	print()
-	
-	
-# Get CPU temp
-cpu = CPUTemperature()
+	now = datetime.now()
+	print("Last API call:\t\t" + now.strftime("%Y-%m-%d %H:%M:%S"))
+	cpu_r = round(cpu.temperature, 2)
+	print("Current CPU:\t\t" + str(cpu_r) + "°C")
 
-# Print to display
-os.system('clear')
-print("============================================")
-print("            Cloud Watcher")
-print("============================================")
-print()
-now = datetime.now()
-print("Last API call:\t\t" + now.strftime("%Y-%m-%d %H:%M:%S"))
-cpu_r = round(cpu.temperature, 2)
-print("Current CPU:\t\t" + str(cpu_r) + "°C")
+	if jsonresult['status'] == "hibernated":
+				print("Venia Dev:\t\t" + '\033[32m' + "Hibernated" + '\033[0m')
+				switchBlue()
 
-if jsonresult['status'] == "hibernated":
-			print("Venia Dev:\t\t" + '\033[32m' + "Hibernated" + '\033[0m')
-			switchBlue()
+	elif jsonresult['status'] == "running":
+				print("Venia Dev:\t\t" + '\033[31m' + "Running" + '\033[0m')
+				switchGreen()
 
-elif jsonresult['status'] == "running":
-			print("Venia Dev:\t\t" + '\033[31m' + "Running" + '\033[0m')
-			switchGreen()
-			
-
-
-
-
-countdown(int(sleepValue))
-			
-print("Complete")
+	countdown(int(sleepValue))
