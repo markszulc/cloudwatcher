@@ -238,5 +238,14 @@ print("Last API call:\t\t" + now.strftime("%Y-%m-%d %H:%M:%S"))
 cpu_r = round(cpu.temperature, 2)
 print("Current CPU:\t\t" + str(cpu_r) + "°C")
 
-print(jsonresult['status'])
-switchBlue()
+if jsonresult['status'] == "hibernated":
+			print("Venia Dev:\t\t" + '\033[32m' + "Hibernated" + '\033[0m')
+			switchBlue()
+		elif jsonresult['status'] == "running":
+			print("Venia Dev:\t\t" + '\033[31m' + "Running" + '\033[0m')
+			switchBlue()
+			
+			
+			
+#print(jsonresult['status'])
+#switchBlue()
