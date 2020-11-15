@@ -84,4 +84,4 @@ print("Last API call:\t\t" + now.strftime("%Y-%m-%d %H:%M:%S"))
 cpu_r = round(cpu.temperature, 2)
 print("Current CPU:\t\t" + str(cpu_r) + "°C")
 
-	
+print(jsonresult['firstName'])
