@@ -17,6 +17,19 @@ from datetime import datetime, time
 
 print("Booting v" + str(version))
 
+blinkThread = None
+after_work = False
+globalRed = 0
+globalGreen = 0
+globalBlue = 0
+token=''
+points = []
+fullname = ''
+brightness_led = 0.5
+sleepValue = 30 # seconds
+
+
+
 
 # Define Error Logging
 def printerror(ex):
@@ -32,6 +45,54 @@ def is_connected():
     except OSError:
         pass
     return False
+
+# ############################
+#        UNICORN SETUP
+# ############################
+def setColor(r, g, b, brightness, speed) :
+	global crntColors, globalBlue, globalGreen, globalRed
+	globalRed = r
+	globalGreen = g
+	globalBlue = b
+
+	if brightness == '' :
+		unicorn.brightness(brightness_led)
+
+	for y in range(height):
+		for x in range(width):
+			unicorn.set_pixel(x, y, r, g, b)
+			unicorn.show()
+
+def pulse():
+	for b in range(0, 7):
+		blockPrint()
+		unicorn.brightness(b/10)
+		enablePrint()
+		for y in range(height):
+			for x in range(width):
+				unicorn.set_pixel(x, y, 102, 255, 255)
+				unicorn.show()
+		sleep(0.05)
+	sleep(1)
+	for b in range(6, 0, -1):
+		blockPrint()
+		unicorn.brightness(b/10)
+		enablePrint()
+		for y in range(height):
+			for x in range(width):
+				unicorn.set_pixel(x, y, 102, 255, 255)
+				unicorn.show()
+		sleep(0.05)
+
+def switchBlue() :
+	red = 0
+	green = 0
+	blue = 250
+	blinkThread = threading.Thread(target=setColor, args=(red, green, blue, '', ''))
+	blinkThread.do_run = True
+	blinkThread.start()
+	
+	
 
 
 #### MAIN ######
