@@ -12,7 +12,7 @@ import requests
 from gpiozero import CPUTemperature
 from time import sleep
 from datetime import datetime, time
-	
+import threading	
 
 
 print("Booting v" + str(version))
@@ -102,6 +102,20 @@ if is_connected == False:
 	printerror("No network. Please connect to the internet and restart the app.")
 	exit(3)
 
+	
+# Setup Unicorn light
+setColor(50, 50, 50, 1, '')
+unicorn.set_layout(unicorn.AUTO)
+unicorn.brightness(0.5)
+
+# Get the width and height of the hardware
+width, height = unicorn.get_shape()
+
+blinkThread = threading.Thread(target=blinkRandom, args=("task",))
+blinkThread.do_run = True
+blinkThread.start()
+
+	
 print("Fetching new data")
 headers={}
 
