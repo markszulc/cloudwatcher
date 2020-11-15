@@ -69,6 +69,14 @@ def countdown(t):
 	print("                                      ", end="\r")
 
 
+def switchBlue() :
+	uh.set_pixel(0, 0, 50, 116, 222)
+	uh.show()
+
+def switchGreen() :
+	uh.set_pixel(0, 0, 0, 255, 0)
+	uh.show()
+
 	
 
 
@@ -132,17 +140,14 @@ print("Current CPU:\t\t" + str(cpu_r) + "°C")
 
 if jsonresult['status'] == "hibernated":
 			print("Venia Dev:\t\t" + '\033[32m' + "Hibernated" + '\033[0m')
+			switchBlue()
 
 elif jsonresult['status'] == "running":
 			print("Venia Dev:\t\t" + '\033[31m' + "Running" + '\033[0m')
+			switchGreen()
 			
 
-			
 
-uh.set_pixel(0, 0, 50, 116, 222)
-uh.set_pixel(1, 1, 50, 116, 222)
-uh.set_pixel(2, 2, 50, 116, 222)
-uh.show()
 
 
 countdown(int(sleepValue))
