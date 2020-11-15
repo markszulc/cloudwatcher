@@ -115,6 +115,11 @@ if jsonresult['status'] == "hibernated":
 elif jsonresult['status'] == "running":
 			print("Venia Dev:\t\t" + '\033[31m' + "Running" + '\033[0m')
 			
+
 			
+unicorn.set_layout(unicorn.PHAT)
+unicorn.brightness(0.5)
+unicorn.set_pixel(0,0,255,0,0)
+unicorn.show()
 			
-print(jsonresult['status'])
+print("Complete")
