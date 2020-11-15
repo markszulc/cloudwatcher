@@ -3,7 +3,7 @@
 version = 1.
 
 import os
-import unicornhat as uh
+import unicornhat as unicorn
 import time
 import colorsys
 import json
