@@ -86,6 +86,14 @@ def switchGreen(prg) :
 		for y in range(4):
 			uh.set_pixel(offset, y, 0, 255, 0)
 	uh.show()
+	
+def switchOrange(prg) :
+	rowoffset = prg * 3
+	for x in range(2):
+		offset = x + rowoffset
+		for y in range(4):
+			uh.set_pixel(offset, y, 255, 165, 0)
+	uh.show()
 
 	
 
@@ -158,6 +166,10 @@ while True:
 	elif jsonresult['venia']['state'] == "running":
 				print("Venia Dev:\t\t" + '\033[32m' + "Running" + '\033[0m')
 				switchGreen(2)
+				
+	elif jsonresult['venia']['state'] == "starting":
+				print("Venia Dev:\t\t" + '\033[30m' + "De-Hibernating" + '\033[0m')
+				switchGreen(2)
 
 	if jsonresult['securbank']['state'] == "hibernated":
 				print("SecuBank Dev:\t\t" + '\033[31m' + "Hibernated" + '\033[0m')
@@ -166,7 +178,11 @@ while True:
 	elif jsonresult['securbank']['state'] == "running":
 				print("SecuBank Dev:\t\t" + '\033[32m' + "Running" + '\033[0m')
 				switchGreen(1)
-				
+
+	elif jsonresult['securbank']['state'] == "starting":
+				print("SecurBank Dev:\t\t" + '\033[30m' + "De-Hibernating" + '\033[0m')
+				switchGreen(1)
+
 	if jsonresult['wknd']['state'] == "hibernated":
 				print("WKND Dev:\t\t" + '\033[31m' + "Hibernated" + '\033[0m')
 				switchBlue(0)
@@ -174,6 +190,11 @@ while True:
 	elif jsonresult['wknd']['state'] == "running":
 				print("WKND Dev:\t\t" + '\033[32m' + "Running" + '\033[0m')
 				switchGreen(0)
+				
+	elif jsonresult['wknd']['state'] == "starting":
+				print("WKND Dev:\t\t" + '\033[30m' + "De-Hibernating" + '\033[0m')
+				switchGreen(0)
+
 				
 	print(" ")			
 				
