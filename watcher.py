@@ -22,6 +22,7 @@ from signal import signal, SIGINT
 from gpiozero import CPUTemperature
 import pyqrcode
 
+aioendpoint = 'https://20092_29243.adobeioruntime.net/api/v1/web/PreciousOrangeHorse-0.0.1/watcher'
 
 print("Booting v" + str(version))
 
@@ -111,7 +112,7 @@ while True:
 	trycount = 0
 
 	try:
-		result = requests.get(f'https://runtime.adobe.io/api/v1/web/20092_29243/PreciousOrangeHorse-0.0.1/generic', headers=headers, timeout=5)
+		result = requests.get(aioendpoint, headers=headers, timeout=5)
 		result.raise_for_status()
 		jsonresult = result.json()
 
