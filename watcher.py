@@ -152,28 +152,29 @@ while True:
 	switchBlue(1)
 			
 	if jsonresult['venia']['state'] == "hibernated":
-				print("Venia Dev:\t\t" + '\033[32m' + "Hibernated" + '\033[0m')
+				print("Venia Dev:\t\t" + '\033[31m' + "Hibernated" + '\033[0m')
 				switchBlue(2)
 
 	elif jsonresult['venia']['state'] == "running":
-				print("Venia Dev:\t\t" + '\033[31m' + "Running" + '\033[0m')
+				print("Venia Dev:\t\t" + '\033[32m' + "Running" + '\033[0m')
 				switchGreen(2)
 
 	if jsonresult['securbank']['state'] == "hibernated":
-				print("SecuBank Dev:\t\t" + '\033[32m' + "Hibernated" + '\033[0m')
+				print("SecuBank Dev:\t\t" + '\033[31m' + "Hibernated" + '\033[0m')
 				switchBlue(1)
 
 	elif jsonresult['securbank']['state'] == "running":
-				print("SecuBank Dev:\t\t" + '\033[31m' + "Running" + '\033[0m')
+				print("SecuBank Dev:\t\t" + '\033[32m' + "Running" + '\033[0m')
 				switchGreen(1)
 				
 	if jsonresult['wknd']['state'] == "hibernated":
-				print("WKND Dev:\t\t" + '\033[32m' + "Hibernated" + '\033[0m')
+				print("WKND Dev:\t\t" + '\033[31m' + "Hibernated" + '\033[0m')
 				switchBlue(0)
 
 	elif jsonresult['wknd']['state'] == "running":
-				print("WKND Dev:\t\t" + '\033[31m' + "Running" + '\033[0m')
+				print("WKND Dev:\t\t" + '\033[32m' + "Running" + '\033[0m')
 				switchGreen(0)
 				
+	print(" ")			
 				
 	countdown(int(sleepValue))
