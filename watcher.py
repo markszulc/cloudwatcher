@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Last edit: 15/11/20
-version = 1.
+version = 1.1
 
 import requests
 import socket
@@ -151,11 +151,11 @@ while True:
 	switchBlue(0)
 	switchBlue(1)
 			
-	if jsonresult['venia.state'] == "hibernated":
+	if jsonresult['venia']['state'] == "hibernated":
 				print("Venia Dev:\t\t" + '\033[32m' + "Hibernated" + '\033[0m')
 				switchBlue(2)
 
-	elif jsonresult['venia.state'] == "running":
+	elif jsonresult['venia']['state'] == "running":
 				print("Venia Dev:\t\t" + '\033[31m' + "Running" + '\033[0m')
 				switchGreen(2)
 
