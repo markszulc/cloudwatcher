@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Last edit: 15/11/20
-version = 1.1
+version = 1.2
 
 import requests
 import socket
@@ -37,7 +37,7 @@ token=''
 points = []
 fullname = ''
 brightness_led = 0.5
-sleepValue = 30 # seconds
+sleepValue = 15 # seconds
 spacing = 360.0 / 16.0
 
 
