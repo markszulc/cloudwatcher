@@ -174,7 +174,7 @@ while True:
 				
 	elif jsonresult['cm-p17858-e45829']['state'] == "starting":
 				print("Venia Dev:\t\t" + '\033[30m' + "De-Hibernating" + '\033[0m')
-				switchGreen(2)
+				switchOrange(2)
 
 	if jsonresult['cm-p23811-e67708']['state'] == "hibernated":
 				print("SecuBank Dev:\t\t" + '\033[31m' + "Hibernated" + '\033[0m')
@@ -186,7 +186,7 @@ while True:
 
 	elif jsonresult['cm-p23811-e67708']['state'] == "starting":
 				print("SecurBank Dev:\t\t" + '\033[30m' + "De-Hibernating" + '\033[0m')
-				switchGreen(1)
+				switchOrange(1)
 
 	if jsonresult['cm-p24704-e76433']['state'] == "hibernated":
 				print("WKND Dev:\t\t" + '\033[31m' + "Hibernated" + '\033[0m')
@@ -198,7 +198,7 @@ while True:
 				
 	elif jsonresult['cm-p24704-e76433']['state'] == "starting":
 				print("WKND Dev:\t\t" + '\033[30m' + "De-Hibernating" + '\033[0m')
-				switchGreen(0)
+				switchOrange(0)
 
 				
 	print(" ")			
