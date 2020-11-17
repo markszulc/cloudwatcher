@@ -115,8 +115,8 @@ while True:
 
 	uh.set_layout(uh.PHAT)
 	uh.brightness(0.5)
-	uh.set_pixel(2, 0, 50, 50, 50)
-	uh.set_pixel(5, 0, 50, 50, 50)
+	uh.set_pixel(2, 0, 100,100,100)
+	uh.set_pixel(5, 0, 100, 100, 100)
 	uh.show()
 
 
