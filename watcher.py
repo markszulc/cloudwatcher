@@ -73,6 +73,9 @@ def countdown(t):
 
 def switchBlue(prg) :
 	rowoffset = prg * 3
+	uh.set_pixel(2, 0, 0, 0, 0)
+	uh.set_pixel(5, 0, 0, 0, 0)
+
 	for x in range(2):
 		offset = x + rowoffset
 		for y in range(4):
@@ -81,6 +84,8 @@ def switchBlue(prg) :
 
 def switchGreen(prg) :
 	rowoffset = prg * 3
+	uh.set_pixel(2, 0, 0, 0, 0)
+	uh.set_pixel(5, 0, 0, 0, 0)
 	for x in range(2):
 		offset = x + rowoffset
 		for y in range(4):
@@ -89,6 +94,8 @@ def switchGreen(prg) :
 	
 def switchOrange(prg) :
 	rowoffset = prg * 3
+	uh.set_pixel(2, 0, 0, 0, 0)
+	uh.set_pixel(5, 0, 0, 0, 0)
 	for x in range(2):
 		offset = x + rowoffset
 		for y in range(4):
@@ -108,8 +115,8 @@ while True:
 
 	uh.set_layout(uh.PHAT)
 	uh.brightness(0.5)
-	uh.set_pixel(2, 0, 100, 100, 100)
-	uh.set_pixel(5, 0, 100, 100, 100)
+	uh.set_pixel(2, 0, 50, 100, 50)
+	uh.set_pixel(5, 0, 50, 100, 50)
 	uh.show()
 
 
@@ -181,15 +188,15 @@ while True:
 				print("SecurBank Dev:\t\t" + '\033[30m' + "De-Hibernating" + '\033[0m')
 				switchGreen(1)
 
-	if jsonresult['cm-p17858-e45829']['state'] == "hibernated":
+	if jsonresult['cm-p24704-e76433']['state'] == "hibernated":
 				print("WKND Dev:\t\t" + '\033[31m' + "Hibernated" + '\033[0m')
 				switchBlue(0)
 
-	elif jsonresult['cm-p17858-e45829']['state'] == "running":
+	elif jsonresult['cm-p24704-e76433']['state'] == "running":
 				print("WKND Dev:\t\t" + '\033[32m' + "Running" + '\033[0m')
 				switchGreen(0)
 				
-	elif jsonresult['cm-p17858-e45829']['state'] == "starting":
+	elif jsonresult['cm-p24704-e76433']['state'] == "starting":
 				print("WKND Dev:\t\t" + '\033[30m' + "De-Hibernating" + '\033[0m')
 				switchGreen(0)
 
