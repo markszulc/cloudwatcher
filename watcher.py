@@ -164,42 +164,44 @@ while True:
 	cpu_r = round(cpu.temperature, 2)
 	print("Current CPU:\t\t" + str(cpu_r) + "°C")
 			
-	if jsonresult['cm-p17858-e45829']['state'] == "hibernated":
-				print("Venia Dev:\t\t" + '\033[31m' + "Hibernated" + '\033[0m')
-				switchBlue(2)
+	try: 	
+		if jsonresult['cm-p17858-e45829']['state'] == "hibernated":
+					print("Venia Dev:\t\t" + '\033[31m' + "Hibernated" + '\033[0m')
+					switchBlue(2)
 
-	elif jsonresult['cm-p17858-e45829']['state'] == "running":
-				print("Venia Dev:\t\t" + '\033[32m' + "Running" + '\033[0m')
-				switchGreen(2)
-				
-	elif jsonresult['cm-p17858-e45829']['state'] == "starting":
-				print("Venia Dev:\t\t" + '\033[30m' + "De-Hibernating" + '\033[0m')
-				switchOrange(2)
+		elif jsonresult['cm-p17858-e45829']['state'] == "running":
+					print("Venia Dev:\t\t" + '\033[32m' + "Running" + '\033[0m')
+					switchGreen(2)
 
-	if jsonresult['cm-p23811-e67708']['state'] == "hibernated":
-				print("SecuBank Dev:\t\t" + '\033[31m' + "Hibernated" + '\033[0m')
-				switchBlue(1)
+		elif jsonresult['cm-p17858-e45829']['state'] == "starting":
+					print("Venia Dev:\t\t" + '\033[30m' + "De-Hibernating" + '\033[0m')
+					switchOrange(2)
 
-	elif jsonresult['cm-p23811-e67708']['state'] == "running":
-				print("SecuBank Dev:\t\t" + '\033[32m' + "Running" + '\033[0m')
-				switchGreen(1)
+		if jsonresult['cm-p23811-e67708']['state'] == "hibernated":
+					print("SecuBank Dev:\t\t" + '\033[31m' + "Hibernated" + '\033[0m')
+					switchBlue(1)
 
-	elif jsonresult['cm-p23811-e67708']['state'] == "starting":
-				print("SecurBank Dev:\t\t" + '\033[30m' + "De-Hibernating" + '\033[0m')
-				switchOrange(1)
+		elif jsonresult['cm-p23811-e67708']['state'] == "running":
+					print("SecuBank Dev:\t\t" + '\033[32m' + "Running" + '\033[0m')
+					switchGreen(1)
 
-	if jsonresult['cm-p24704-e76433']['state'] == "hibernated":
-				print("WKND Dev:\t\t" + '\033[31m' + "Hibernated" + '\033[0m')
-				switchBlue(0)
+		elif jsonresult['cm-p23811-e67708']['state'] == "starting":
+					print("SecurBank Dev:\t\t" + '\033[30m' + "De-Hibernating" + '\033[0m')
+					switchOrange(1)
 
-	elif jsonresult['cm-p24704-e76433']['state'] == "running":
-				print("WKND Dev:\t\t" + '\033[32m' + "Running" + '\033[0m')
-				switchGreen(0)
-				
-	elif jsonresult['cm-p24704-e76433']['state'] == "starting":
-				print("WKND Dev:\t\t" + '\033[30m' + "De-Hibernating" + '\033[0m')
-				switchOrange(0)
+		if jsonresult['cm-p24704-e76433']['state'] == "hibernated":
+					print("WKND Dev:\t\t" + '\033[31m' + "Hibernated" + '\033[0m')
+					switchBlue(0)
 
+		elif jsonresult['cm-p24704-e76433']['state'] == "running":
+					print("WKND Dev:\t\t" + '\033[32m' + "Running" + '\033[0m')
+					switchGreen(0)
+
+		elif jsonresult['cm-p24704-e76433']['state'] == "starting":
+					print("WKND Dev:\t\t" + '\033[30m' + "De-Hibernating" + '\033[0m')
+					switchOrange(0)
+	except:
+		print("Unable to fetch status")
 				
 	print(" ")			
 				
