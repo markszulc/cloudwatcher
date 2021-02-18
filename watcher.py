@@ -165,17 +165,17 @@ while True:
 	print("Current CPU:\t\t" + str(cpu_r) + "°C")
 			
 	try: 	
-		if jsonresult['cm-p17858-e45829']['state'] == "hibernated":
-					print("Venia Dev:\t\t" + '\033[31m' + "Hibernated" + '\033[0m')
-					switchBlue(2)
+	#	#if jsonresult['cm-p17858-e45829']['state'] == "hibernated":
+	#				print("Venia Dev:\t\t" + '\033[31m' + "Hibernated" + '\033[0m')
+	#				switchBlue(2)
 
-		elif jsonresult['cm-p17858-e45829']['state'] == "running":
-					print("Venia Dev:\t\t" + '\033[32m' + "Running" + '\033[0m')
-					switchGreen(2)
+	#	elif jsonresult['cm-p17858-e45829']['state'] == "running":
+	#				print("Venia Dev:\t\t" + '\033[32m' + "Running" + '\033[0m')
+	#				switchGreen(2)
 
-		elif jsonresult['cm-p17858-e45829']['state'] == "starting":
-					print("Venia Dev:\t\t" + '\033[30m' + "De-Hibernating" + '\033[0m')
-					switchOrange(2)
+	#	elif jsonresult['cm-p17858-e45829']['state'] == "starting":
+	#				print("Venia Dev:\t\t" + '\033[30m' + "De-Hibernating" + '\033[0m')
+	#				switchOrange(2)
 
 		if jsonresult['cm-p23811-e67708']['state'] == "hibernated":
 					print("SecuBank Dev:\t\t" + '\033[31m' + "Hibernated" + '\033[0m')
