@@ -165,7 +165,7 @@ while True:
 	print("Current CPU:\t\t" + str(cpu_r) + "°C")
 			
 	try: 	
-		#if jsonresult['cm-p31363-e105601']['state'] == "hibernated":
+		if jsonresult['cm-p31363-e105601']['state'] == "hibernated":
 					print("Nevarro Dev:\t\t" + '\033[31m' + "Hibernated" + '\033[0m')
 					switchBlue(2)
 
