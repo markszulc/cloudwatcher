@@ -177,15 +177,15 @@ while True:
 					print("Nevarro Dev:\t\t" + '\033[30m' + "De-Hibernating" + '\033[0m')
 					switchOrange(2)
 
-		if jsonresult['cm-p23811-e67708']['state'] == "hibernated":
+		if jsonresult['cm-p23811-e108112']['state'] == "hibernated":
 					print("SecuBank Dev:\t\t" + '\033[31m' + "Hibernated" + '\033[0m')
 					switchBlue(1)
 
-		elif jsonresult['cm-p23811-e67708']['state'] == "running":
+		elif jsonresult['cm-p23811-e108112']['state'] == "running":
 					print("SecuBank Dev:\t\t" + '\033[32m' + "Running" + '\033[0m')
 					switchGreen(1)
 
-		elif jsonresult['cm-p23811-e67708']['state'] == "starting":
+		elif jsonresult['cm-p23811-e108112']['state'] == "starting":
 					print("SecurBank Dev:\t\t" + '\033[30m' + "De-Hibernating" + '\033[0m')
 					switchOrange(1)
 
