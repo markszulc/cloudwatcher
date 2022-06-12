@@ -22,7 +22,7 @@ from signal import signal, SIGINT
 from gpiozero import CPUTemperature
 import pyqrcode
 
-aioendpoint = 'https://20092_29243.adobeioruntime.net/api/v1/web/PreciousOrangeHorse-0.0.1/watcher'
+aioendpoint = 'https://runtime.adobe.io/api/v1/web/20092-cloudbuddy-stage/dx-excshell-1/buddyEndpoint'
 
 print("Booting v" + str(version))
 
@@ -131,6 +131,7 @@ while True:
 		result = requests.get(aioendpoint, headers=headers, timeout=5)
 		result.raise_for_status()
 		jsonresult = result.json()
+		print(jsonresult)
 
 	except requests.exceptions.Timeout as timeerr:
 		printerror("The request for Cloud Buddy API timed out! " + str(timeerr))
