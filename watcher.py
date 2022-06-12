@@ -157,7 +157,7 @@ while True:
 	# Print to display
 	os.system('clear')
 	print("============================================")
-	print("            Cloud Watcher")
+	print("            Cloud Buddy")
 	print("============================================")
 	print()
 	now = datetime.now()
