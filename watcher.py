@@ -166,41 +166,41 @@ while True:
 	print("Current CPU:\t\t" + str(cpu_r) + "°C")
 			
 	try: 	
-		if jsonresult['cm-p31363-e105601']['state'] == "hibernated":
+		if jsonresult['name'] == "John Doe":
 					print("Nevarro Dev:\t\t" + '\033[31m' + "Hibernated" + '\033[0m')
 					switchBlue(2)
 
-		elif jsonresult['cm-p31363-e105601']['state'] == "running":
+		elif jsonresult['name'] == "Jane Doe":
 					print("Nevarro Dev:\t\t" + '\033[32m' + "Running" + '\033[0m')
 					switchGreen(2)
 
-		elif jsonresult['cm-p31363-e105601']['state'] == "starting":
-					print("Nevarro Dev:\t\t" + '\033[30m' + "De-Hibernating" + '\033[0m')
-					switchOrange(2)
+		# elif jsonresult['cm-p31363-e105601']['state'] == "starting":
+		# 			print("Nevarro Dev:\t\t" + '\033[30m' + "De-Hibernating" + '\033[0m')
+		# 			switchOrange(2)
 
-		if jsonresult['cm-p47527-e236969']['state'] == "hibernated":
-					print("Scariff Dev:\t\t" + '\033[31m' + "Hibernated" + '\033[0m')
-					switchBlue(1)
+		# if jsonresult['cm-p47527-e236969']['state'] == "hibernated":
+		# 			print("Scariff Dev:\t\t" + '\033[31m' + "Hibernated" + '\033[0m')
+		# 			switchBlue(1)
 
-		elif jsonresult['cm-p47527-e236969']['state'] == "running":
-					print("Scariff Dev:\t\t" + '\033[32m' + "Running" + '\033[0m')
-					switchGreen(1)
+		# elif jsonresult['cm-p47527-e236969']['state'] == "running":
+		# 			print("Scariff Dev:\t\t" + '\033[32m' + "Running" + '\033[0m')
+		# 			switchGreen(1)
 
-		elif jsonresult['cm-p47527-e236969']['state'] == "starting":
-					print("Scariff Dev:\t\t" + '\033[30m' + "De-Hibernating" + '\033[0m')
-					switchOrange(1)
+		# elif jsonresult['cm-p47527-e236969']['state'] == "starting":
+		# 			print("Scariff Dev:\t\t" + '\033[30m' + "De-Hibernating" + '\033[0m')
+		# 			switchOrange(1)
 
-		if jsonresult['cm-p24704-e76433']['state'] == "hibernated":
-					print("WKND Dev:\t\t" + '\033[31m' + "Hibernated" + '\033[0m')
-					switchBlue(0)
+		# if jsonresult['cm-p24704-e76433']['state'] == "hibernated":
+		# 			print("WKND Dev:\t\t" + '\033[31m' + "Hibernated" + '\033[0m')
+		# 			switchBlue(0)
 
-		elif jsonresult['cm-p24704-e76433']['state'] == "running":
-					print("WKND Dev:\t\t" + '\033[32m' + "Running" + '\033[0m')
-					switchGreen(0)
+		# elif jsonresult['cm-p24704-e76433']['state'] == "running":
+		# 			print("WKND Dev:\t\t" + '\033[32m' + "Running" + '\033[0m')
+		# 			switchGreen(0)
 
-		elif jsonresult['cm-p24704-e76433']['state'] == "starting":
-					print("WKND Dev:\t\t" + '\033[30m' + "De-Hibernating" + '\033[0m')
-					switchOrange(0)
+		# elif jsonresult['cm-p24704-e76433']['state'] == "starting":
+		# 			print("WKND Dev:\t\t" + '\033[30m' + "De-Hibernating" + '\033[0m')
+		# 			switchOrange(0)
 	except:
 		print("Unable to fetch status")
 				
