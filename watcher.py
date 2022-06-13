@@ -174,7 +174,7 @@ while True:
 		# the result is a JSON string:
 		print(y)
 
-		for item in jsonresult:
+		for item in jsonresult['Environments']:
 			print("found item: " + item)
 
 		if jsonresult['name'] == "John Doe":
