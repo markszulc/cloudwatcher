@@ -168,16 +168,14 @@ while True:
 	try: 	
 		print("Parsing data... ")
 		print(jsonresult)
-		print(jsonresult['Environments'])
-		print(jsonresult['Environments'][0])
-		print(jsonresult['Environments'][0]['name'])
 
-		if jsonresult['Environments'][0]['name'] == "John Doe":
-					print("I saw John:\t\t" + '\033[31m' + "Hibernated" + '\033[0m')
-					switchBlue(2)
+		# if jsonresult['Environments'][0]['name'] == "John Doe":
+		# 			print("I saw John:\t\t" + '\033[31m' + "Hibernated" + '\033[0m')
+		# 			switchBlue(2)
 
 		for environment in jsonresult['Environments']:
 			print("found item: " + environment['name'])
+			switchBlue(environment['id'])
 
 		
 		# elif jsonresult['name'] == "Jane Doe":
