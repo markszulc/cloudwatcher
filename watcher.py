@@ -176,8 +176,8 @@ while True:
 					print("I saw John:\t\t" + '\033[31m' + "Hibernated" + '\033[0m')
 					switchBlue(2)
 
-		for item in jsonresult['Environments']:
-			print("found item: " + item)
+		for environment in jsonresult['Environments']:
+			print("found item: ")
 
 		
 		# elif jsonresult['name'] == "Jane Doe":
