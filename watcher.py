@@ -174,10 +174,10 @@ while True:
 		# the result is a JSON string:
 		print(y)
 
-		for item in jsonresult:
+		for item in y:
 			print("found item: " + item)
 
-		if jsonresult['name'] == "John Doe":
+		if y['name'] == "John Doe":
 					print("I saw John:\t\t" + '\033[31m' + "Hibernated" + '\033[0m')
 					switchBlue(2)
 
