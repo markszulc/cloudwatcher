@@ -177,7 +177,7 @@ while True:
 					switchBlue(2)
 
 		for environment in jsonresult['Environments']:
-			print("found item: ")
+			print("found item: " + environment['name'])
 
 		
 		# elif jsonresult['name'] == "Jane Doe":
