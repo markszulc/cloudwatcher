@@ -170,6 +170,7 @@ while True:
 		print(jsonresult)
 		print(jsonresult['Environments'])
 		print(jsonresult['Environments'][0])
+		print(jsonresult['Environments'][0]['name'])
 
 		for item in jsonresult["Environments"]:
 			print("found item: " + item)
