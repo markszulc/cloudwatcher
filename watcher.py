@@ -168,6 +168,9 @@ while True:
 	try: 	
 		print("Parsing data... ")
 		
+		for item in jsonresult:
+			print("found item: " + item)
+			
 		if jsonresult['name'] == "John Doe":
 					print("I saw John:\t\t" + '\033[31m' + "Hibernated" + '\033[0m')
 					switchBlue(2)
