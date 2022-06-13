@@ -168,7 +168,12 @@ while True:
 	try: 	
 		print("Parsing data... ")
 		print(jsonresult)
-		
+		# convert into JSON:
+		y = json.dumps(jsonresult)
+
+		# the result is a JSON string:
+		print(y)
+
 		for item in jsonresult:
 			print("found item: " + item)
 
