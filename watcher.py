@@ -168,13 +168,9 @@ while True:
 	try: 	
 		print("Parsing data... ")
 		print(jsonresult)
-		# convert into JSON:
-		y = json.dumps(jsonresult)
+		print(jsonresult['Environments'])
 
-		# the result is a JSON string:
-		print(y)
-
-		for item in jsonresult['Environments']:
+		for item in jsonresult["Environments"]:
 			print("found item: " + item)
 
 		if jsonresult['name'] == "John Doe":
